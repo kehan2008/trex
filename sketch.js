@@ -102,9 +102,10 @@ function draw() {
     }
     
     //jump when the space key is pressed
-    if(keyDown("space")&& trex.y >= 100) {
+    if((touches.length>0 || keyDown("space"))&& trex.y >= 100) {
         trex.velocityY = -12;
         jumpSound.play();
+      touches=[];
     }
     
     //add gravity
